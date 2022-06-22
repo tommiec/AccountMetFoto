@@ -1,0 +1,15 @@
+﻿@model AccountDetailViewModel
+
+<h1>@Model.FirstName @Model.LastName</h1>
+
+<p>Details van @Model.FirstName:</p>
+<ul>
+    <li>Geslacht: @Model.Gender</li>
+    <li>Woonachtig: @Model.Address</li>
+    <li>Geboren: @Model.DOB</li>
+</ul>
+<label asp-for="PhotoUrl"></label>
+<p><img src="@Model.PhotoUrl" /></p>
+
+
+<a asp-controller="Account" asp-action="Overview">Terug naar overzicht</a>

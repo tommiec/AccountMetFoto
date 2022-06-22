@@ -1,0 +1,30 @@
+﻿@model IEnumerable<AccountListViewModel>
+
+<h1>Accounts</h1>
+<a asp-controller="Account" asp-action="Create">Add account</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Gender</th>
+            <th>Detail</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var account in Model)
+        {
+            <tr>
+                <td>@account.FirstName</td>
+                <td>@account.LastName</td>
+                <td>@account.Gender</td>
+                <td><a asp-controller="Account" asp-action="Detail" asp-route-id="@account.Id">Detail</a></td>
+                <td><a asp-controller="Account" asp-action="Edit" asp-route-id="@account.Id">Edit</a></td>
+                <td><a asp-controller="Account" asp-action="Delete" asp-route-id="@account.Id">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

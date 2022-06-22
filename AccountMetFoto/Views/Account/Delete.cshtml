@@ -1,0 +1,9 @@
+﻿@model AccountDeleteViewModel
+
+<p>Bent u zeker dat u de account van <strong>@Model.FirstName @Model.LastName</strong> met geboortedatum <strong>@Model.DOB</strong> wenst te verwijderen?</p>
+
+<form asp-controller="Account" asp-action="ConfirmDelete" asp-route-id="@Model.Id" method="post">
+    <button class="btn btn-danger">Delete</button>
+</form>
+
+<a asp-controller="Account" asp-action="Overview">Terug naar het overzicht</a>
